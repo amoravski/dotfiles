@@ -24,6 +24,7 @@ map Y y$
 "-- Plugins --"
 call plug#begin('~/.vim/plugged')
 
+Plug 'mattreduce/vim-mix'
 Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -35,4 +36,4 @@ Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()
 let g:gitgutter_enabled = 0
-let g:gitgutter_highlight_lines = 1 
+let g:gitgutter_highlight_lines = 1
