@@ -12,10 +12,11 @@
 background = #00000000
 background-alt = #00000000
 ;foreground = ${xrdb:color7:#222}
-foreground = #98971a
+foreground = #689d6a
+
 foreground-alt = #b8bb26
-primary =  #98971a
-secondary = #b8bb26
+primary =  #928374
+secondary = #fb4934
 alert = #bd2c40
 
 [bar/example]
@@ -25,7 +26,7 @@ height = 25
 ;offset-x = 1%
 ;offset-y = 1%
 radius = 0
-fixed-center = falset
+fixed-center = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -41,13 +42,13 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = mono:pixelsize=7;1
-font-1 = FontAwesome:pixelsize=7;1
-font-2 = siji:pixelsize=7;1
+font-0 = Iconsolata:pixelsize=8;1
+font-1 = Iconsolata:pixelsize=8;1
+font-2 = Iconsolata:pixelsize=8;1
 
 modules-left = i3 
-modules-center = updates-arch-combined
-modules-right = xkeyboard  volume battery time 
+modules-center = updates-arch-combined date
+modules-right = xkeyboard volume wlan battery 
 
 tray-position = right
 tray-padding = 2
@@ -80,15 +81,19 @@ blacklist-0 = num lock
 
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-prefix-underline = #000000 
+format-prefix-underline = ${colors.background}
+
 
 label-layout = %layout%
-label-layout-underline = #000000
+label-layout-underline = ${colors.background}
+
 
 label-indicator-padding = 2
 label-indicator-margin = 1
-label-indicator-background = ${colors.secondary}
-label-indicator-underline = #000000 
+label-indicator-background = #000000
+;${colors.secondary}
+label-indicator-underline = ${colors.background}
+
 
 [module/filesystem]
 type = internal/fs
@@ -105,7 +110,8 @@ type = internal/bspwm
 
 label-focused = %index%
 label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.primary}
+label-focused-underline= ${colors.background}
+ 
 label-focused-padding = 2
 
 label-occupied = %index%
@@ -193,7 +199,8 @@ type = internal/cpu
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline =  #456771
+format-underline = ${colors.background}
+
 label = %percentage%%
 
 [module/memory]
@@ -201,7 +208,8 @@ type = internal/memory
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline =  #456771
+format-underline = ${colors.background}
+
 label = %percentage_used%%
 
 [module/wlan]
@@ -210,7 +218,8 @@ interface = net1
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
-format-connected-underline =  #456771
+format-connected-underline = ${colors.background}
+
 label-connected = %essid%
 
 format-disconnected =
@@ -231,7 +240,8 @@ type = internal/network
 interface = eth0
 interval = 3.0
 
-format-connected-underline =  #456771
+format-connected-underline = ${colors.background}
+  
 format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected = %local_ip%
@@ -246,22 +256,23 @@ format-disconnected =
 type = internal/date
 interval = 5
 
-date =
-date-alt = " %Y-%m-%d"
+;date =
+date = " %Y-%m-%d"
 
 time = %H:%M
 time-alt = %H:%M:%S
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
-#format-underline =  
+format-underline = ${colors.background}
+ 
 
-label = %date% %time%
+label =  %time% %date%
 
 [module/volume]
 type = internal/volume
 
-format-volume = <label-volume> <bar-volume>
+format-volume = <label-volume><bar-volume>
 label-volume = VOL 
 label-volume-foreground = ${root.foreground}
 
@@ -280,11 +291,20 @@ bar-volume-foreground-6 = #456771
 bar-volume-gradient = true
 bar-volume-indicator = ●
 bar-volume-indicator-font = 2
-bar-volume-fill = ─
+bar-volume-fill = =
 bar-volume-fill-font = 2
 bar-volume-empty = ─
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground-alt}
+
+[module/pulseaudio-tail]
+type = custom/script
+exec = ~/Software/polybar_scripts/pulseaudio-tail.sh
+tail = true
+click-right = exec pavucontrol &
+click-left = ~/polybar_scripts/pulseaudio-tail.sh --mute
+scroll-up = ~/polybar_scripts/pulseaudio-tail.sh --up
+scroll-down = ~/polybar_scripts/pulseaudio-tail.sh --down
 
 [module/cmus]
 type = custom/script
@@ -303,7 +323,8 @@ adapter = ADP1
 full-at = 98
 
 format-charging = <animation-charging> <label-charging>
-format-charging-underline =  #000000
+format-charging-underline = ${colors.background}
+
 
 format-discharging = <ramp-capacity> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
@@ -329,7 +350,8 @@ thermal-zone = 0
 warn-temperature = 60
 
 format = <ramp> <label>
-format-underline =  #456771
+format-underline = ${colors.background}
+
 format-warn = <ramp> <label-warn>
 format-warn-underline = ${self.format-underline}
 
@@ -384,7 +406,8 @@ screenchange-reload = true
 type = custom/script
 exec = uname -r
 interval = 1024
-format-underline =  #456771
+format-underline = ${colors.background}
+
 format-prefix = " "
 format-prefix-foreground = #666
 
@@ -392,7 +415,8 @@ format-prefix-foreground = #666
 type = custom/script
 exec = date
 interval = 1
-format-underline =  #000000
+format-underline = ${colors.background}
+
 format-prefix = " "
 format-prefix-foreground = #666
 
