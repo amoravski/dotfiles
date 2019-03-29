@@ -1,5 +1,4 @@
-"------- General settings -------"
-
+"General settings ------- {{{
 
 "Line number"
 set number
@@ -42,7 +41,10 @@ set lazyredraw
 filetype indent plugin on
 
 "Gotta love me a pretty theme"
-let g:airline_theme='alduin'
+let g:airline_theme='minimalist'
+
+"Linebreak"
+set linebreak
 
 "Swap Files"
 set backupdir=/tmp//
@@ -56,7 +58,10 @@ let g:airline#extensions#ycm#enabled = 1
 "Fugitive branch for airline"
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#branch#empty_message = ''
-"------- Shortcuts -------"
+
+" }}}
+
+"Shortcuts ------- {{{
 
 "General"
 nnoremap ; :
@@ -78,8 +83,12 @@ inoremap <Right> <nop>
 let mapleader="\<SPACE>"
 
 "VIMRC quick edit"
-:nnoremap <leader>ev :vsplit ~/.vimrc<cr>
-:nnoremap <leader>sv :source ~/.vimrc<cr>
+nnoremap <leader>ev :vsplit ~/.vimrc<cr>
+nnoremap <leader>sv :source ~/.vimrc<cr>
+
+"Jumping centers to screen"
+nnoremap n nzz
+nnoremap } }zz
 
 "Mapped to behave like D and C"
 nnoremap Y y$
@@ -98,12 +107,14 @@ nnoremap <leader>re :YcmCompleter RefactorRename
 nnoremap <leader>n :NERDTreeToggle<CR>
 
 "FZF"
-nnoremap <leader>f :Files<CR>
+nnoremap <leader>ff :Files<CR>
 
 "GitGutter"
 nnoremap <leader>gg :GitGutterToggle<CR>
 
-"------- Plugins -------"
+" }}}
+
+"Plugins ------- {{{
 
 call plug#begin('~/.vim/plugged')
 
@@ -120,3 +131,11 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'
 
 call plug#end()
+" }}}
+
+"Vimscript file settings -------  {{{
+augroup filetype_vim
+    autocmd!
+    autocmd FileType vim setlocal foldmethod=marker
+augroup END
+" }}}
