@@ -1,0 +1,9 @@
+#!/bin/sh
+tmux new-session -d -s 'minstrel'
+tmux send-keys 'cd ~/Software/Development/js/minstrel_front_end' 'C-m'
+tmux send-keys 'npm start' 'C-m'
+tmux new-window
+tmux send-keys 'cd ~/Software/Development/js/minstrel_front_end/src' 'C-m'
+tmux split-window -h
+tmux send-keys 'cd ~/Software/Development/js/minstrel_front_end/src' 'C-m'
+tmux -2 attach-session -t minstrel

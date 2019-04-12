@@ -1,0 +1,8 @@
+#!/bin/sh
+tmux new-session -d -s 'db'
+tmux send-keys 'mongo' 'C-m'
+tmux new-window
+tmux send-keys 'redis-server' 'C-m'
+tmux split-window -h
+tmux send-keys 'sudo mongod --dbpath /var/lib/mongodb' 'C-m'
+tmux -2 attach-session -t db
