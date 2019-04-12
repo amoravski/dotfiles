@@ -59,6 +59,23 @@ let g:airline#extensions#ycm#enabled = 1
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#branch#empty_message = ''
 
+"Startify custom start"
+let g:startify_lists = [
+\ { 'type': 'dir', 'header': ['Files'.getcwd() ] },
+\ { 'type': 'sessions', 'header': ['Sessions' ] },
+\ { 'type': 'bookmarks', 'header': ['Bookmarks' ] },
+\ { 'type': 'commands', 'header': ['Commands' ] }
+\]
+
+let g:startify_commands = [
+\ { 'up': [ 'Update Plugins', ':PlugUpdate' ] },
+\ { 'ug': [ 'Update Plugin Manager', ':PlugUpgrade' ] }
+\]
+
+let g:startify_bookmars = [
+\ { 'v': '~/.vimrc'},
+\ { 'z': '~/.zshrc'}
+\]
 " }}}
 
 "Shortcuts ------- {{{
@@ -118,17 +135,26 @@ nnoremap <leader>gg :GitGutterToggle<CR>
 
 call plug#begin('~/.vim/plugged')
 
+"Git"
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+
+"Completion"
+Plug 'Valloric/YouCompleteMe'
+Plug 'ervandew/supertab'
+
+"Appearance"
+Plug 'mhinz/vim-startify'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+"Tools"
+Plug 'jceb/vim-orgmode'
 Plug 'mattreduce/vim-mix'
+Plug 'scrooloose/nerdtree'
 Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-fugitive'
-Plug 'Valloric/YouCompleteMe'
-Plug 'ervandew/supertab'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'scrooloose/nerdtree'
 
 call plug#end()
 " }}}
