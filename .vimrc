@@ -164,4 +164,7 @@ augroup filetype_vim
     autocmd!
     autocmd FileType vim setlocal foldmethod=marker
 augroup END
+augroup filetype_zsh
+    autocmd!
+    autocmd FileType zsh setlocal foldmethod=marker
 " }}}
