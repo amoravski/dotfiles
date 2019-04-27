@@ -164,6 +164,8 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " Fuzzy finder
 Plug 'junegunn/fzf.vim' " Fuzzy finder
 Plug 'junegunn/goyo.vim' " Writing in vim
 Plug 'tpope/vim-commentary' " Commenting out better
+Plug 'l04m33/vlime', {'rtp': 'vim'} " Lisp IDE
+Plug 'vim-scripts/paredit.vim'
 
 call plug#end()
 " }}}
