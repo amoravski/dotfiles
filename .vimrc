@@ -76,6 +76,9 @@ let g:startify_bookmars = [
 \ { 'v': '~/.vimrc'},
 \ { 'z': '~/.zshrc'}
 \]
+
+" Org mode
+let g:org_agenda_files = '~/org/*.org'
 " }}}
 
 "Shortcuts ------- {{{
@@ -98,6 +101,7 @@ inoremap <Right> <nop>
 
 "Map leader
 let mapleader="\<SPACE>"
+let maplocalleader="\\"
 
 "VIMRC quick edit
 nnoremap <leader>ev :vsplit ~/.vimrc<cr>
@@ -140,6 +144,12 @@ nnoremap <leader>go :Goyo<CR>
 
 "Plugins ------- {{{
 
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 call plug#begin('~/.vim/plugged')
 
 "Git
@@ -154,6 +164,7 @@ Plug 'ervandew/supertab' " Tab completion
 Plug 'mhinz/vim-startify' " Splash screen
 Plug 'vim-airline/vim-airline' " Fancy status line
 Plug 'vim-airline/vim-airline-themes' " Themes for status line
+Plug 'romainl/Apprentice' " Colors
 
 "Tools
 Plug 'jceb/vim-orgmode' " Vim implementation
@@ -166,6 +177,9 @@ Plug 'junegunn/goyo.vim' " Writing in vim
 Plug 'tpope/vim-commentary' " Commenting out better
 Plug 'l04m33/vlime', {'rtp': 'vim'} " Lisp IDE
 Plug 'vim-scripts/paredit.vim'
+Plug 'mattn/calendar-vim' " Calendar
+Plug 'w0rp/ale' " Linting
+Plug 'vim-scripts/utl.vim' " Text linking
 
 call plug#end()
 " }}}
