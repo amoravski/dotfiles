@@ -76,6 +76,9 @@ let g:startify_bookmars = [
 \ { 'v': '~/.vimrc'},
 \ { 'z': '~/.zshrc'}
 \]
+
+" Org mode
+let g:org_agenda_files = '~/org/*.org'
 " }}}
 
 "Shortcuts ------- {{{
@@ -98,6 +101,7 @@ inoremap <Right> <nop>
 
 "Map leader
 let mapleader="\<SPACE>"
+let maplocalleader="\\"
 
 "VIMRC quick edit
 nnoremap <leader>ev :vsplit ~/.vimrc<cr>
@@ -160,6 +164,7 @@ Plug 'ervandew/supertab' " Tab completion
 Plug 'mhinz/vim-startify' " Splash screen
 Plug 'vim-airline/vim-airline' " Fancy status line
 Plug 'vim-airline/vim-airline-themes' " Themes for status line
+Plug 'romainl/Apprentice' " Colors
 
 "Tools
 Plug 'jceb/vim-orgmode' " Vim implementation
@@ -170,7 +175,9 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " Fuzzy finder
 Plug 'junegunn/fzf.vim' " Fuzzy finder
 Plug 'junegunn/goyo.vim' " Writing in vim
 Plug 'tpope/vim-commentary' " Commenting out better
-
+Plug 'mattn/calendar-vim' " Calendar
+Plug 'w0rp/ale' " Linting
+Plug 'vim-scripts/utl.vim' " Text linking
 call plug#end()
 " }}}
 
