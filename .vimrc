@@ -77,8 +77,9 @@ let g:startify_bookmars = [
 \ { 'z': '~/.zshrc'}
 \]
 
+let g:deoplete#enable_at_startup = 1
 " Org mode
-let g:org_agenda_files = '~/org/*.org'
+let g:org_agenda_files = '~/personal/*.org'
 " }}}
 
 "Shortcuts ------- {{{
@@ -157,7 +158,7 @@ Plug 'airblade/vim-gitgutter' "Adds a diff to the side
 Plug 'tpope/vim-fugitive' "Run git commands from vim
 
 "Completion
-Plug 'Valloric/YouCompleteMe' " Completion engine
+Plug 'Shougo/deoplete.nvim' " Completion
 Plug 'ervandew/supertab' " Tab completion
 
 "Appearance
