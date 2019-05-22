@@ -77,9 +77,15 @@ let g:startify_bookmars = [
 \ { 'z': '~/.zshrc'}
 \]
 
+" Deoplete
 let g:deoplete#enable_at_startup = 1
+
 " Org mode
 let g:org_agenda_files = '~/personal/*.org'
+
+" Snippets
+let g:neosnippet#snippets_directory='~/Software/dotfiles/snippets'
+
 " }}}
 
 "Shortcuts ------- {{{
@@ -141,6 +147,18 @@ nnoremap <leader>pu :PlugUpdate<CR>
 "Goyo
 nnoremap <leader>go :Goyo<CR>
 
+"Neosnippets
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+" For conceal markers.
+if has('conceal')
+  set conceallevel=2 concealcursor=niv
+endif
 " }}}
 
 "Plugins ------- {{{
@@ -166,6 +184,10 @@ Plug 'mhinz/vim-startify' " Splash screen
 Plug 'vim-airline/vim-airline' " Fancy status line
 Plug 'vim-airline/vim-airline-themes' " Themes for status line
 Plug 'romainl/Apprentice' " Colors
+
+"Snippets
+Plug 'Shougo/neosnippet.vim'
+Plug 'Shougo/neosnippet-snippets'
 
 "Tools
 Plug 'jceb/vim-orgmode' " Vim implementation

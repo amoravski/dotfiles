@@ -1,0 +1,36 @@
+snippet     reducer
+abbr        red
+options     head
+    export default ( state={}, action ) => {
+        switch(action.type) {
+            case '':
+                return state;
+            default:
+                return state;
+        }
+    }
+
+snippet     react_class
+abbr        reclass
+options     head
+    import React from 'react';
+
+    class ${1:#:class_name} extends React.Component {
+        render () {
+            return <div>$1</div>;
+        }
+    }
+
+    export default $1;
+
+
+snippet     react_function
+abbr        refun
+options     head
+    import React from 'react';
+
+    const ${1:#:class_name} = () =>{
+        return <div>$1</div>;
+    }
+
+    export default $1;
