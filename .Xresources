@@ -1,11 +1,9 @@
 URxvt.scrollBar: false
 urxvt*termName:         rxvt
-!urxvt*font:                 xft:MonteCarlo:pixelsize=8
-!urxvt*boldFont:             xft:MonteCarlo:pixelsize=8
-!urxvt*background:           #000000
-!urxvt*foreground:           #666699
-!urxvt*cursorColor:          #6699CC
-!urxvt*colorBD:              #CCCCFF
+urxvt*background:           #000000
+urxvt*foreground:           #666699
+urxvt*cursorColor:          #6699CC
+urxvt*colorBD:              #CCCCFF
 XTerm.termName: xterm
 XTerm.vt100.selectToClipboard: true
 XTerm.vt100.metaSendsEscape: true
