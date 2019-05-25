@@ -1,0 +1,5 @@
+#!/bin/sh
+tmux new-session -d -s 'day-org'
+tmux send-keys 'cd ~/personal/2019/$(date "+%m")' 'C-m'
+tmux send-keys 'vi $(date "+%d").org' 'C-m'
+tmux -2 attach-session -t day-org
