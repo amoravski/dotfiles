@@ -84,7 +84,7 @@ let g:deoplete#enable_at_startup = 1
 let g:org_agenda_files = '~/personal/*.org'
 
 " Snippets
-let g:neosnippet#snippets_directory='~/Software/dotfiles/snippets'
+let g:neosnippet#snippets_directory='~/software/dotfiles/snippets'
 
 " }}}
 
@@ -92,6 +92,7 @@ let g:neosnippet#snippets_directory='~/Software/dotfiles/snippets'
 
 "General
 nnoremap ; :
+nnoremap : ;
 inoremap <esc> <nop>
 inoremap jk <esc>
 
