@@ -1,5 +1,7 @@
 # User configuration {{{
 
+export PATH="$PATH:/home/gideon/.local/bin"
+
 # Theme
 ZSH_THEME="flazz"
 
@@ -23,6 +25,9 @@ ZSH_THEME="flazz"
 
 # }}}
 # Aliases {{{
+
+# Protontricks
+alias protontricks-flat='flatpak run --env=WINETRICKS=/home/gideon/winetricks --env=STEAM_RUNTIME=0 --command=.local/bin/protontricks com.valvesoftware.Steam'
 
 # Pacman
 alias pasyu="sudo pacman -Syu"
@@ -55,6 +60,8 @@ plugins=(
   python
   postgres
   tmux
+  vi-mode
+  zsh-syntax-highlighting
 )
 
 # Fuzzy

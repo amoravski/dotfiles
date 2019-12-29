@@ -12,7 +12,7 @@
 background = #00000000
 background-alt = #00000000
 ;foreground = ${xrdb:color7:#222}
-foreground = #689d6a
+foreground = #264348
 
 foreground-alt = #b8bb26
 primary =  #928374
@@ -46,7 +46,7 @@ font-0 = Iconsolata:pixelsize=8;1
 font-1 = Iconsolata:pixelsize=8;1
 font-2 = Iconsolata:pixelsize=8;1
 
-modules-left = i3 
+modules-left = i3
 modules-center = updates-arch-combined date
 modules-right = xkeyboard volume wlan battery 
 
@@ -66,13 +66,25 @@ tray-padding = 2
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
 
+[module/workspaces-xmonad]
+type = custom/script
+exec = tail -F /tmp/.xmonad-workspace-log
+exec-if = [ -p /tmp/.xmonad-workspace-log ]
+tail = true
+
+[module/title-xmonad]
+type = custom/script
+exec = tail -F /tmp/.xmonad-title-log
+exec-if = [ -p /tmp/.xmonad-title-log ]
+tail = true
+
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:30:...%
 
 [module/updates-arch-combined]
 type = custom/script
-exec = ~/Software/polybar_scripts/updates-arch-combined.sh
+exec = ~/software/polybar_scripts/updates-arch-combined.sh
 interval = 600
 
 [module/xkeyboard]
@@ -299,7 +311,7 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 
 [module/pulseaudio-tail]
 type = custom/script
-exec = ~/Software/polybar_scripts/pulseaudio-tail.sh
+exec = ~/software/polybar_scripts/pulseaudio-tail.sh
 tail = true
 click-right = exec pavucontrol &
 click-left = ~/polybar_scripts/pulseaudio-tail.sh --mute

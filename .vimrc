@@ -205,6 +205,13 @@ Plug 'mattn/calendar-vim' " Calendar
 Plug 'w0rp/ale' " Linting
 Plug 'vim-scripts/utl.vim' " Text linking
 
+"LaTeX
+Plug 'vim-latex/vim-latex' " LaTex
+Plug 'xuhdev/vim-latex-live-preview' " Live Preview
+
+"Music
+Plug 'supercollider/scvim' " Makes music
+
 call plug#end()
 " }}}
 
