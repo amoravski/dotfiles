@@ -52,6 +52,9 @@ alias gpl="git pull"
 alias gph="git push"
 alias gch="git checkout"
 
+# Misc
+alias cr="clear"
+
 # }}}
 # Plugins {{{
 plugins=(

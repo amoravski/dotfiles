@@ -34,7 +34,7 @@ set $transparent #00000000
 floating_modifier $mod
 
 #Wallpaper
-exec_always feh --bg-scale ~/pictures/wallpapers/Download-Geek-Background-Free.jpg
+exec_always feh --bg-scale ~/pictures/wallpapers/katana_zero_city.jpg
 
 #Composite manager, for trasnparency
 exec_always xcompmgr 
@@ -56,7 +56,7 @@ bindsym $mod+d exec rofi -show drun
 
 
 # Screenshot
-bindsym $mod+Shift+s exec deepin-screenshot -s ~/pictures/screenshots
+bindsym $mod+Shift+s exec maim -s ~/pictures/screenshots/$(date +%s).png
 
 # start rofi window
 bindsym $mod+Shift+f exec rofi -show window
@@ -74,8 +74,8 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # class                 border  backgr. text    indicator
-client.focused          #3c3836 #689d6a #fabd2f #00000000
-client.focused_inactive #3c3836 #00000000 #d5c4a1 #504945
+client.focused          #99FFFF #99FFFF #99FFFF #00FFFF
+client.focused_inactive #99FFFF #00000000 #99FFFF #99FFFF
 client.unfocused        #3c3836 #00000000 #d5c4a1 #504945
 client.urgent           #7c6f64 #fabd2f #3c3836 #fabd2f
 
@@ -189,11 +189,11 @@ mode "R" {
 bindsym $mod+r mode "R"
 
 # Borders
-gaps inner 0
-gaps outer 0
+gaps inner 5
+gaps outer 5
 #smart_gaps on
 #new_window 1pixel
-default_border pixel 2
+default_border pixel 1
 bindsym $mod+t border normal
 bindsym $mod+y border 1pixel
 bindsym $mod+u border none

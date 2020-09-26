@@ -204,6 +204,7 @@ Plug 'vim-scripts/paredit.vim'
 Plug 'mattn/calendar-vim' " Calendar
 Plug 'w0rp/ale' " Linting
 Plug 'vim-scripts/utl.vim' " Text linking
+Plug 'rust-lang/rust.vim' " Rust Language server
 
 "LaTeX
 Plug 'vim-latex/vim-latex' " LaTex
